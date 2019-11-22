@@ -14,6 +14,11 @@ class MessagesForm(forms.ModelForm):
                 'name': "name",
                 'class': "form-control",
             }),
+            'occupation': forms.TextInput(attrs={
+                'type': "text",
+                'name': "occupation",
+                'class': "form-control",
+            }),
             'phone': forms.TextInput(attrs={
                 'type': "text",
                 'name': "phone",

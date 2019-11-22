@@ -22,15 +22,19 @@
                 <span class="anchor" id="formContact"></span>
                 <!-- form user info -->
                 <div class="card card-outline-secondary">
-                    <div class="col-3">
-                        <img src="{% static 'images/silkway-technics.55.small.jpg' %}">
-                    </div>
-                    <div class="col-9">
-                        <div class="card-header">
-                            <h3 class="mb-0">Online Hazard/safety Event <br> Voluntary Reporting</h3>
+                    <div class="header">
+                        <div class="col-3">
+                            <img src="{% static 'images/silkway-technics.55.small.jpg' %}">
+                        </div>
+                        <div class="col-9">
+                            <div class="card-header">
+                                <h3 class="mb-0">Online Hazard/safety Event <br> Voluntary Reporting</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
+                        <p style="text-align: center; color: red;">Read "Note" below before starting</p>
+
                         <form method="post">
                             {% csrf_token %}
                             <fieldset>
@@ -42,20 +46,7 @@
                                         </div>
                                     </div>
                                 {% endfor %}
-                                {#                                <label for="email2" class="mb-0">Email</label>#}
-                                {#                                <div class="row mb-1">#}
-                                {#                                    <div class="col-lg-12">#}
-                                {#                                        <input type="text" name="email2" id="email2" class="form-control" required="">#}
-                                {#                                    </div>#}
-                                {#                                </div>#}
-                                {#                                #}
-                                {#                                <label for="message2" class="mb-0">Message</label>#}
-                                {#                                <div class="row mb-1">#}
-                                {#                                    <div class="col-lg-12">#}
-                                {#                                        <textarea rows="6" name="message2" id="message2" class="form-control"#}
-                                {#                                                  required=""></textarea>#}
-                                {#                                    </div>#}
-                                {#                                </div>#}
+                                <p>{{ note.note|safe }}</p>
                                 <button type="submit" class="btn btn-secondary btn-lg float-right">Send Message</button>
                             </fieldset>
                         </form>
@@ -66,7 +57,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>
