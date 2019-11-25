@@ -45,6 +45,7 @@ class MessagesForm(forms.ModelForm):
         labels = {
             'name': 'From: ',
             'phone': 'Contact Details: ',
+            'occupation': 'Occupation: ',
             'confidential': 'Confidential or not (Yes/No): ',
             'subject': 'Subject: ',
             'messages': 'Message: '

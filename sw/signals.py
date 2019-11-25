@@ -18,6 +18,8 @@ def send_mail_to_user(*args, **kwargs):
         confidential = f"{obj.confidential}"
         subject = f"{obj.subject}"
         messages = f"{obj.messages}"
-        background_job = Thread(target=send_verification_email, args=(name, occupation, contact, confidential, subject, messages))
+        date = f"{obj.date}"
+        email = 'nigar-muradli@mail.ru'
+        background_job = Thread(target=send_verification_email, args=(name, occupation, contact, confidential, subject, messages, date, email))
         print('Post is created')
         background_job.start()
