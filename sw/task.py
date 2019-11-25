@@ -15,10 +15,9 @@ def send_verification_email(name, occupation, phone, confidential, subject, mess
                    f"<p>Confidential: {confidential}</p>" \
                    f"<p>Subject: {subject}</p>" \
                    f"<p>Messages: {messages}</p>" \
-                   f"<p>Email: {email}</p>" \
                    f"<p>Date: {date}</p>" \
         # f"<p>Confidential: {confidential}</p>"
 
-    msg = EmailMultiAlternatives(subject, text_content, 'nigar-muradli@mail.ru', ['umuradli@gmail.com'])
+    msg = EmailMultiAlternatives(subject, text_content, from_email, ['munisisazade@gmail.com'])
     msg.attach_alternative(html_content, "text/html")
     msg.send()
